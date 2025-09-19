@@ -1,0 +1,11 @@
+def hasTwoSum(arr, target):
+    seen = set()
+    for x in arr:
+        if target - x in seen:
+            return True
+        seen.add(x)
+    return False
+
+print(hasTwoSum([0, -1, 2, -3, 1], -2))  # True
+print(hasTwoSum([1, -2, 1, 0, 5], 0))    # False
+print(hasTwoSum([11], 11))               # False
