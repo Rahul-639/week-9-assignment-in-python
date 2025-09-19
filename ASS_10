@@ -1,0 +1,11 @@
+def zeroPairs(arr):
+    arr.sort()
+    seen = set(arr)
+    res = []
+    for num in arr:
+        if num < 0 and -num in seen:
+            res.append([num, -num])
+    return res
+print(zeroPairs([-1, 0, 1, 2, -1, -4]))  
+print(zeroPairs([6, 1, 8, 0, 4, -9, -1, -10, -6, -5]))  
+
