@@ -1,0 +1,15 @@
+def longestConsecutive(arr):
+    num_set = set(arr)
+    longest = 0
+    for num in arr:
+        if num - 1 not in num_set:  # start of sequence
+            curr = num
+            length = 1
+            while curr + 1 in num_set:
+                curr += 1
+                length += 1
+            longest = max(longest, length)
+    return longest
+print(longestConsecutive([2, 6, 1, 9, 4, 5, 3])) 
+print(longestConsecutive([1, 9, 3, 10, 4, 20, 2]))
+print(longestConsecutive([15, 13, 12, 14, 11, 10, 9]))
