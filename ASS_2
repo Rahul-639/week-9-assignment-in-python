@@ -1,0 +1,12 @@
+def findDuplicates(arr):
+    n = len(arr)
+    seen = set()
+    res = set()
+    for x in arr:
+        if x in seen:
+            res.add(x)
+        else:
+            seen.add(x)
+    return sorted(res)
+print(findDuplicates([2, 3, 1, 2, 3]))  
+print(findDuplicates([3, 1, 2]))       
